@@ -22,14 +22,14 @@
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script>
 
-    var width = 1000,
-      height = 1000;
+    var width = 2000,
+      height = 2000;
 
     var cluster = d3.layout.cluster()
       //  .size([width, height - 200])
       .nodeSize([1, 100])
       .separation(function (a, b) {
-        return 10 + d3.sum([a, b].map(function (d) {
+        return 20 + d3.sum([a, b].map(function (d) {
           return d.status == "D" ? 70 : 0;
         }))
       });
@@ -38,8 +38,8 @@
       .attr("width", width)
       .attr("height", height)
       .append("g")
-      .attr("transform", "translate(1800, 800)rotate(180)scale(0.4,0.4)");
 
+    svg.attr("transform", "translate(1550, 0)rotate(90)scale(0.3,0.3)");
     svg.append('rect').attr('width', width).attr('height', height).attr("fill", "red").attr('opacity', 0.1)
 
     // d3.json("https://bl.ocks.org/mbostock/raw/2429963/f29d697bb10b34c08ee2806eaff032324df8150c/readme.json", function (json) {
